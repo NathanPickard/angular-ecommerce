@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product'
+// import { Product } from '../models/product'
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -10,11 +10,11 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('/.netlify/functions/getProduct', {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    });
-  }
+  // getAllProducts(): Observable<Product[]> {
+  //   return this.http.get<Product[]>('/.netlify/functions/getProduct', {
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //   });
+  // }
 }
