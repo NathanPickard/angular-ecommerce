@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/Product';
+
 import { ProductsService } from 'src/app/services/products.service';
-// import { Product } from 'src/app/models/Product';
 
 @Component({
   selector: 'app-products-list',
@@ -8,7 +9,7 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
-  // products: Product[] = [];
+  products: Product[] = [];
   loading = false;
 
   constructor(private productsService: ProductsService) { }
@@ -16,11 +17,11 @@ export class ProductsListComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
 
-    // this.productsService.getAllProducts()
-    //   .subscribe(products => {
-    //     this.loading = false;
-    //     this.products = products;
-    //   });
+    this.productsService.getAllProducts()
+      .subscribe(products => {
+        this.loading = false;
+        this.products = products;
+      });
   }
 
 }

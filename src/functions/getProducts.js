@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
         url: `${process.env.URL}/.netlify/functions/getProducts`,
         price: x.defaultProductVariant.price,
         description: x.blurb.en,
-        body: blocksToHtml({ blocks: x.body.en }),
+        body: blocksToHtml({blocks: x.body.en}),
       }
 
       const image = x.defaultProductVariant.images && x.defaultProductVariant.images.length > 0
@@ -42,3 +42,11 @@ exports.handler = (event, context, callback) => {
     });
   });
 }
+
+
+// exports.handler = (event, context, callback) => {
+//   callback(null, {
+//     statusCode: 200,
+//     body: 'Hello world'
+//   });
+// }
